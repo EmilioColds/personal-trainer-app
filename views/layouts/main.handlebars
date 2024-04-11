@@ -1,45 +1,44 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Trainer App</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/public/css/styles.css">
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/public/css/styles.css" />
+  </head>
 
-<body class="bg-gray-100">
+  <body class="bg-gray-100">
 
-    <nav class="bg-white shadow">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between">
-                <div class="flex space-x-4">
-            
-                    <div>
-                        <a href="/" class="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
-                            <span class="font-bold">Personal Trainer for Runners</span>
-                        </a>
-                    </div>
-            
-                    <div class="flex items-center space-x-1">
-                        <a href="/" class="py-5 px-3 text-gray-700 hover:text-gray-900">Home</a>
-                        <a href="/routine" class="py-5 px-3 text-gray-700 hover:text-gray-900">My Routine</a>
-                    </div>
-                </div>
-         
-                <div class="flex items-center space-x-1">
-                    <a href="/login" class="py-2 px-3 bg-blue-500 text-white rounded hover:bg-blue-600">Login</a>
-                    <a href="/signup" class="py-2 px-3 bg-green-500 text-white rounded hover:bg-green-600">Sign Up</a>
-                    <a href="/logout" class="py-2 px-3 bg-red-500 text-white rounded hover:bg-red-600">Logout</a>
-                    <a href="/questionnaire" class="py-2 px-3 bg-yellow-500 text-white rounded hover:bg-yellow-600">Create Routine</a>
-                </div>
-            </div>
+    <nav class="bg-white shadow w-full">
+      <div class="flex justify-between items-center px-4 h-16">
+
+        <div class="flex space-x-4">
+          <a href="/" class="text-gray-700 hover:text-gray-900 underline">Home</a>
+          <a href="/routine" class="text-gray-700 hover:text-gray-900 underline">My Routine</a>
         </div>
+
+        <div class="absolute left-1/2 transform -translate-x-1/2">
+            <a href="/" class="text-gray-700 hover:text-gray-900 font-bold">Personal Trainer for Runners</a> {{!-- Cambiar por una imagen tipo logo --}}
+        </div>
+
+        <div>
+            {{#if loggedIn}}
+                <button href="/logout" class="py-2 px-3 bg-red-500 text-white rounded hover:bg-red-600">Logout</button>
+            {{else}}
+                <button href="/login" class="py-2 px-3 bg-blue-500 text-white rounded hover:bg-blue-600">Login</button>
+                <button href="/signup" class="py-2 px-3 bg-green-500 text-white rounded hover:bg-green-600">Sign Up</button>
+            {{/if}}
+            <button href="/questionnaire" class="py-2 px-3 bg-yellow-500 text-white rounded hover:bg-yellow-600">Create Routine</button>
+        </div>
+      </div>
     </nav>
 
     <main class="mt-8">
-        {{{body}}}
+      {{{body}}}
     </main>
 
-</body>
+  </body>
 </html>
