@@ -1,12 +1,21 @@
-<div class="container">
-    <h1>The Tech Blog</h1>
-    {{#each posts as |post|}}
-    <div class="post">
-        <h2>{{post.title}}</h2>
-        <p>{{post.content}}</p>
-        <div class="post-info">
-            <span>Posted by {{post.user.username}} on {{formatDate post.createdAt "MM-DD-YYYY"}}</span>
+<div class="bg-blue-50 min-h-screen">
+    <div class="py-10">
+        <!-- Contenido central de la homepage -->
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center">
+                <!-- Suponiendo que quieres un título grande y centrado -->
+                <h1 class="text-4xl py-4 text-blue-600 font-bold mb-6">Personal Trainer for Runners</h1>
+                <p class="text-xl py-4 text-gray-700">
+                    Your trusted companion in running training.
+                </p>
+                <img src="/public/images" alt="App Logo" class="mx-auto py-4 h-40 w-40"> {{!-- Agregar logo aquí --}}
+                <p class="text-xl py-4 text-gray-700">
+                    Please sign up or login to create a routine.
+                </p>
+                <p class="text-xl py-4 text-gray-700">
+                    To see your existing routine, please click the <a href="/routine" class="text-gray-700 hover:text-gray-900 underline"> My Routine </a> link
+                </p>
+            </div>
         </div>
     </div>
-    {{/each}}
 </div>
