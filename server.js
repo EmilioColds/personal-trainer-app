@@ -15,7 +15,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.render('homepage', { layout : 'main' });
+    res.render('signup', { layout : 'main' });
 });
 
 app.listen(PORT, () => {
