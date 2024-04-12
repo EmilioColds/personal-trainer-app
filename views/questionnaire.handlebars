@@ -1,7 +1,7 @@
 <div class="min-h-screen bg-blue-50">
     <div class="py-10">
         <div class="max-w-4xl mx-auto px-4">
-            <h1 class="text-2xl font-bold text-center text-blue-600 mb-4">Let's
+            <h1 class="text-2xl font-bold text-center text-blue-600 mb-4 pb-8">Let's
                 create you routine!</h1>
 
             <form id="questionnaireForm" class="space-y-6">
@@ -178,7 +178,7 @@
                             <div class="mt-2 space-y-2">
                                 <div>
                                     <label class="inline-flex items-center">
-                                        <input type="radio" name="trainingDurationMinutes"
+                                        <input type="radio" name="trainingDuration"
                                             value="Hombre" class="form-radio"
                                             required>
                                         <span class="ml-2">20 - 40 minutes</span>
@@ -186,7 +186,7 @@
                                 </div>
                                 <div>
                                     <label class="inline-flex items-center">
-                                        <input type="radio" name="trainingDurationMinutes"
+                                        <input type="radio" name="trainingDuration"
                                             value="Mujer" class="form-radio"
                                             required>
                                         <span class="ml-2">40 - 60 minutes</span>
@@ -194,7 +194,7 @@
                                 </div>
                                 <div>
                                     <label class="inline-flex items-center">
-                                        <input type="radio" name="trainingDurationMinutes"
+                                        <input type="radio" name="trainingDuration"
                                             value="Mujer" class="form-radio"
                                             required>
                                         <span class="ml-2">60+ minutes</span>
@@ -203,9 +203,9 @@
                             </div>
                         </fieldset>
 
-                        <label for="trainingWeeks"
+                        <label for="targetDeadline"
                             class="block text-sm font-medium text-gray-700">How many weeks would you like to train?</label>
-                        <input type="number" id="trainingWeeks" name="trainingWeeks" required
+                        <input type="number" id="targetDeadline" name="targetDeadline" required
                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
 
                         <fieldset class="mt-4">
@@ -243,11 +243,11 @@
 
                 <!-- Objetivos Principiantes -->
                 <div id="beginnerObj"
-                    class="data-category bg-white p-6 shadow-md rounded-md">
+                    class="data-category bg-white p-6 shadow-md rounded-md hidden">
                     {{!-- Agregar class hidden al final --}}
                     <h2 class="font-bold text-lg text-blue-600 mb-2">Select your
                         Objective</h2>
-                    <!-- Resto de las preguntas de Objetivos Principiantes aquí... -->
+                    
                     <fieldset class="mt-4">
                             <div class="mt-2 space-y-2">
                                 <div>
@@ -280,11 +280,11 @@
 
                 <!-- Objetivos Intermedios/Avanzados -->
                 <div id="intAdvObj"
-                    class="data-category bg-white p-6 shadow-md rounded-md">
+                    class="data-category bg-white p-6 shadow-md rounded-md hidden">
                     {{!-- Agregar class hidden al final --}}
                     <h2 class="font-bold text-lg text-blue-600 mb-2">Select your
                         Objective</h2>
-                    <!-- Resto de las preguntas de Objetivos Intermedios/Avanzados aquí... -->
+                    
                     <fieldset class="mt-4">
                             <div class="mt-2 space-y-2">
                                 <div>
@@ -317,30 +317,30 @@
 
                 <!-- Récords -->
                 <div id="records"
-                    class="data-category bg-white p-6 shadow-md rounded-md">
+                    class="data-category bg-white p-6 shadow-md rounded-md hidden">
                     {{!-- Agregar class hidden al final --}}
                     <h2 class="font-bold text-lg text-blue-600 mb-2">Mark your
                         Records</h2>
-                    <!-- Preguntas de Récords aquí... -->
-                    <label for="100mRecord"
+                    
+                    <label for="recordCien"
                             class="block text-sm font-medium text-gray-700">What's your 100 meters record? </label>
-                        <input placeholder="Example: 9.58" type="number" id="100mRecord" name="100mRecord" required
+                        <input placeholder="Example: 9.58" type="number" id="recordCien" name="recordCien" required
                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
 
-                    <label for="400mRecord"
+                    <label for="recordCuatro"
                             class="block text-sm font-medium text-gray-700">What's your 400 meters record? </label>
-                        <input placeholder="Example: 43.03" type="number" id="400mRecord" name="400mRecord" required
+                        <input placeholder="Example: 43.03" type="number" id="recordCuatro" name="recordCuatro" required
                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
 
-                    <label for="1kmPace"
+                    <label for="kmPace"
                             class="block text-sm font-medium text-gray-700">What's your pace for 1 kilometer? </label>
-                        <input placeholder="Example: 3:55 minutes" type="text" id="1kmPace" name="1kmPace" required
+                        <input placeholder="Example: 3:55 minutes" type="text" id="kmPace" name="kmPace" required
                             class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                 </div>
 
                 <button type="submit"
                     class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                    Crear Mi Rutina
+                    Create my ROUTINE!
                 </button>
             </form>
         </div>
