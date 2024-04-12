@@ -15,7 +15,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.render('routine', { layout : 'main' });
+    res.render('questionnaire', { layout : 'main' });
 });
 
 app.listen(PORT, () => {

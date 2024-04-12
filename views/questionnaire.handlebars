@@ -1,0 +1,348 @@
+<div class="min-h-screen bg-blue-50">
+    <div class="py-10">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-2xl font-bold text-center text-blue-600 mb-4">Let's
+                create you routine!</h1>
+
+            <form id="questionnaireForm" class="space-y-6">
+
+                <div id="generalData"
+                    class="data-category bg-white p-6 shadow-md rounded-md">
+                    <h2 class="font-bold text-lg text-blue-600 mb-2">General
+                        Data</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <label for="username"
+                                class="block text-sm font-medium text-gray-700">Username</label>
+                            <input placeholder="Example: BestRunner27" type="text" id="username" name="username"
+                                required
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                        </div>
+
+                        <div>
+                            <label for="age"
+                                class="block text-sm font-medium text-gray-700">Age</label>
+                            <input placeholder="Example: 23" type="number" id="age" name="age" required
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                        </div>
+
+                        <fieldset class="mt-4">
+                            <legend
+                                class="text-sm font-medium text-gray-700">Gender</legend>
+                            <div class="mt-2 space-y-2">
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="gender"
+                                            value="Hombre" class="form-radio"
+                                            required>
+                                        <span class="ml-2">Male</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="gender"
+                                            value="Mujer" class="form-radio"
+                                            required>
+                                        <span class="ml-2">Female</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="gender"
+                                            value="Otro" class="form-radio"
+                                            required>
+                                        <span class="ml-2">Other</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <label for="height"
+                            class="block text-sm font-medium text-gray-700">Height in cm</label>
+                        <input placeholder="Example: 173 "type="number" id="height" name="height" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+
+                        <label for="weight"
+                            class="block text-sm font-medium text-gray-700">Weight in Kg</label>
+                        <input placeholder="Example: 80 "type="number" id="weight" name="weight" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                    
+                        <fieldset class="mt-4">
+                            <legend
+                                class="text-sm font-medium text-gray-700">Any current of previous injuries?</legend>
+                            <div class="mt-2 space-y-2">
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="injury"
+                                            value="Hombre" class="form-radio"
+                                            required>
+                                        <span class="ml-2">Yes</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="injury"
+                                            value="Mujer" class="form-radio"
+                                            required>
+                                        <span class="ml-2">No</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="mt-4">
+                            <legend
+                                class="text-sm font-medium text-gray-700">Do you take any medicine for chronic diseases?</legend>
+                            <div class="mt-2 space-y-2">
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="meds"
+                                            value="Hombre" class="form-radio"
+                                            required>
+                                        <span class="ml-2">Yes</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="meds"
+                                            value="Mujer" class="form-radio"
+                                            required>
+                                        <span class="ml-2">No</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="mt-4">
+                            <legend
+                                class="text-sm font-medium text-gray-700">Would you like a nutritional program?</legend>
+                            <div class="mt-2 space-y-2">
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="nutrition"
+                                            value="Hombre" class="form-radio"
+                                            required>
+                                        <span class="ml-2">Yes</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="nutrition"
+                                            value="Mujer" class="form-radio"
+                                            required>
+                                        <span class="ml-2">No</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="mt-4">
+                            <legend
+                                class="text-sm font-medium text-gray-700">Where would you prefer to train?</legend>
+                            <div class="mt-2 space-y-2">
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="trainingLocation"
+                                            value="Hombre" class="form-radio"
+                                            required>
+                                        <span class="ml-2">Interior</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="trainingLocation"
+                                            value="Mujer" class="form-radio"
+                                            required>
+                                        <span class="ml-2">Jogging track</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="trainingLocation"
+                                            value="Mujer" class="form-radio"
+                                            required>
+                                        <span class="ml-2">Interior and jogging track</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <label for="trainingDays"
+                            class="block text-sm font-medium text-gray-700">How many days a week would you like to train?</label>
+                        <input placeholder="Example: 6" type="number" id="trainingDays" name="trainingDays" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+
+                            <fieldset class="mt-4">
+                            <legend
+                                class="text-sm font-medium text-gray-700">What's your expected training duration?</legend>
+                            <div class="mt-2 space-y-2">
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="trainingDurationMinutes"
+                                            value="Hombre" class="form-radio"
+                                            required>
+                                        <span class="ml-2">20 - 40 minutes</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="trainingDurationMinutes"
+                                            value="Mujer" class="form-radio"
+                                            required>
+                                        <span class="ml-2">40 - 60 minutes</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="trainingDurationMinutes"
+                                            value="Mujer" class="form-radio"
+                                            required>
+                                        <span class="ml-2">60+ minutes</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <label for="trainingWeeks"
+                            class="block text-sm font-medium text-gray-700">How many weeks would you like to train?</label>
+                        <input type="number" id="trainingWeeks" name="trainingWeeks" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+
+                        <fieldset class="mt-4">
+                            <legend
+                                class="text-sm font-medium text-gray-700">Select your running experience</legend>
+                            <div class="mt-2 space-y-2">
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="level"
+                                            value="Hombre" class="form-radio"
+                                            required>
+                                        <span class="ml-2">Beginner</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="level"
+                                            value="Mujer" class="form-radio"
+                                            required>
+                                        <span class="ml-2">Intermediate</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="level"
+                                            value="Mujer" class="form-radio"
+                                            required>
+                                        <span class="ml-2">Advanced</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+
+                <!-- Objetivos Principiantes -->
+                <div id="beginnerObj"
+                    class="data-category bg-white p-6 shadow-md rounded-md">
+                    {{!-- Agregar class hidden al final --}}
+                    <h2 class="font-bold text-lg text-blue-600 mb-2">Select your
+                        Objective</h2>
+                    <!-- Resto de las preguntas de Objetivos Principiantes aquí... -->
+                    <fieldset class="mt-4">
+                            <div class="mt-2 space-y-2">
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="beginnerObj"
+                                            value="Hombre" class="form-radio"
+                                            required>
+                                        <span class="ml-2">Lose weight</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="beginnerObj"
+                                            value="Mujer" class="form-radio"
+                                            required>
+                                        <span class="ml-2">Gain muscle</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="beginnerObj"
+                                            value="Mujer" class="form-radio"
+                                            required>
+                                        <span class="ml-2">Improve my physical condition</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                </div>
+
+                <!-- Objetivos Intermedios/Avanzados -->
+                <div id="intAdvObj"
+                    class="data-category bg-white p-6 shadow-md rounded-md">
+                    {{!-- Agregar class hidden al final --}}
+                    <h2 class="font-bold text-lg text-blue-600 mb-2">Select your
+                        Objective</h2>
+                    <!-- Resto de las preguntas de Objetivos Intermedios/Avanzados aquí... -->
+                    <fieldset class="mt-4">
+                            <div class="mt-2 space-y-2">
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="intAdvObj"
+                                            value="Hombre" class="form-radio"
+                                            required>
+                                        <span class="ml-2">Improve my running times (for speed runners)</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="intAdvObj"
+                                            value="Mujer" class="form-radio"
+                                            required>
+                                        <span class="ml-2">Improve my running distances (for resistance runners)</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="inline-flex items-center">
+                                        <input type="radio" name="intAdvObj"
+                                            value="Mujer" class="form-radio"
+                                            required>
+                                        <span class="ml-2">Recover or prevent injuries</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                </div>
+
+                <!-- Récords -->
+                <div id="records"
+                    class="data-category bg-white p-6 shadow-md rounded-md">
+                    {{!-- Agregar class hidden al final --}}
+                    <h2 class="font-bold text-lg text-blue-600 mb-2">Mark your
+                        Records</h2>
+                    <!-- Preguntas de Récords aquí... -->
+                    <label for="100mRecord"
+                            class="block text-sm font-medium text-gray-700">What's your 100 meters record? </label>
+                        <input placeholder="Example: 9.58" type="number" id="100mRecord" name="100mRecord" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+
+                    <label for="400mRecord"
+                            class="block text-sm font-medium text-gray-700">What's your 400 meters record? </label>
+                        <input placeholder="Example: 43.03" type="number" id="400mRecord" name="400mRecord" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+
+                    <label for="1kmPace"
+                            class="block text-sm font-medium text-gray-700">What's your pace for 1 kilometer? </label>
+                        <input placeholder="Example: 3:55 minutes" type="text" id="1kmPace" name="1kmPace" required
+                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                </div>
+
+                <button type="submit"
+                    class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    Crear Mi Rutina
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
