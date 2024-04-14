@@ -1,16 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const createRoutineLink = document.getElementById('createRoutineLink');
-    if (createRoutineLink) {
-        createRoutineLink.addEventListener('click', (e) => {
-            e.preventDefault(); // Prevenir el comportamiento predeterminado de enlace
-            // Aquí puedes agregar la lógica para verificar si el usuario está autenticado
-            // Si lo está, redirige al cuestionario; si no, al login/signup
-            if (localStorage.getItem('loggedIn')) {
-                window.location.href = '/questionnaire';
-            } else {
-                alert('You need to be logged in to create a routine');
-                window.location.href = '/login';
-            }
+    const form = document.getElementById('questionnaireForm');
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        const data = {};
+        formData.forEach((value, key) => { data[key] = value; });
+
+        const response = await fetch('/api/questionnaire', { //CHECAR LA RUTA DE ESE FETCH
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
         });
-    }
+
+        if (response.ok) {
+            alert('Routine created successfully!');
+            window.location.href = '/routine';
+        } else {
+            const errorData = await response.json();
+            alert(errorData.message);
+        }
+    });
 });
