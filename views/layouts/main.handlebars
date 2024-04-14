@@ -17,7 +17,7 @@
 
         <div class="flex space-x-4">
           <a href="/" class="text-gray-700 hover:text-gray-900 underline" id="homeLink">Home</a>
-          <a href="/routine" class="text-gray-700 hover:text-gray-900 underline">My Routine</a>
+          <a href="/routine" class="text-gray-700 hover:text-gray-900 underline" id="routineLink">My Routine</a>
         </div>
 
         <div class="absolute left-1/2 transform -translate-x-1/2">
@@ -26,12 +26,12 @@
 
         <div>
             {{#if loggedIn}}
-                <button href="/logout" class="py-2 px-3 bg-red-500 text-white rounded hover:bg-red-600">Logout</button>
+                <a href="/logout" class="py-2 px-3 bg-red-500 text-white rounded hover:bg-red-600" id="logoutBtn">Logout</a>
             {{else}}
-                <button href="/login" class="py-2 px-3 bg-blue-500 text-white rounded hover:bg-blue-600">Login</button>
-                <button href="/signup" class="py-2 px-3 bg-green-500 text-white rounded hover:bg-green-600">Sign Up</button>
+                <a href="/login" class="py-2 px-3 bg-blue-500 text-white rounded hover:bg-blue-600" id="loginBtn">Login</a>
+                <a href="/signup" class="py-2 px-3 bg-green-500 text-white rounded hover:bg-green-600" id="signupBtn">Sign Up</a>
             {{/if}}
-            <button href="/questionnaire" class="py-2 px-3 bg-yellow-500 text-white rounded hover:bg-yellow-600">Create Routine</button>
+            <a href="/questionnaire" class="py-2 px-3 bg-yellow-500 text-white rounded hover:bg-yellow-600" id="questionBtn">Create Routine</a>
         </div>
       </div>
     </nav>
@@ -42,3 +42,5 @@
 
   </body>
 </html>
+<script src="/public/js/navbar.js"></script>
+<script src="/public/js/logout.js"></script>
