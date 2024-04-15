@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+const withAuth = require('./utils/auth');
 const exphbs = require('express-handlebars').engine;
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -18,7 +19,7 @@ app.get('/', (req, res) => {
     res.render('homepage', { layout : 'main' });
 });
 
-app.get('/routine', (req, res) => { //AGREGAR withAuth
+app.get('/routine', withAuth, (req, res) => { //AGREGAR withAuth
     res.render('routine', { layout : 'main' });
 });
 
@@ -38,7 +39,7 @@ app.get('/signup', (req, res) => {
     }
 });
 
-app.get('/questionnaire', (req, res) => {
+app.get('/questionnaire', withAuth, (req, res) => { //AGREGAR withAuth
     res.render('questionnaire', { layout : 'main' });
 });
 
