@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
     res.render('homepage', { layout : 'main' });
 });
 
-app.get('/routine', withAuth, (req, res) => {
+app.get('/routine', (req, res) => { //AGREGAR withAuth
     res.render('routine', { layout : 'main' });
 });
 
