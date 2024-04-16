@@ -1,50 +1,40 @@
 const express = require('express');
 const session = require('express-session');
-const withAuth = require('./utils/auth');
-const exphbs = require('express-handlebars').engine;
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-//////////////////////////////////////////////////
-// Código de branch Handlebars para visualizar
+const exphbs = require('express-handlebars');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const { sequelize } = require('./config/connection'); // Import Sequelize connection. Checar que esto matchee
+const router = require('./index.js'); // Import main router
+
 
 const app = express();
 const PORT = 3003;
 
+
+// Configure Handlebars as the view engine
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Serve static files from the 'public' directory
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-    res.render('homepage', { layout : 'main' });
-});
 
-app.get('/routine', withAuth, (req, res) => { //AGREGAR withAuth
-    res.render('routine', { layout : 'main' });
-});
 
-app.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/routine');
-    } else {
-        res.render('login');
-    }
-});
+// Mount main router
+app.use(index);
 
-app.get('/signup', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/routine');
-    } else {
-        res.render('signup');
-    }
-});
+// Sync Sequelize models with the database and start the server
+sequelize.sync()
+    .then(() => {
+        app.listen(PORT, () => {
+            console.log(`Server listening at http://localhost:${PORT}`);
+        });
+    })
+    .catch((error) => {
+        console.error('Database connection error:', error);
+    });
 
-app.get('/questionnaire', withAuth, (req, res) => { //AGREGAR withAuth
-    res.render('questionnaire', { layout : 'main' });
-});
-
-app.listen(PORT, () => {
-    console.log(`Servidor escuchando en http://localhost:${PORT}`);
-});
-
-/////////////////////////////////////////////////////////
