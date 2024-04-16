@@ -1,5 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('questionnaireForm');
+    const beginnerDiv = document.getElementById('beginnerObj');
+    const intAdvDiv = document.getElementById('intAdvObj');
+    const levelRadioButtons = document.querySelectorAll('input[name="level"]');
+
+    levelRadioButtons.forEach(button => {
+        button.addEventListener('change', (event) => {
+            const value = event.target.value;
+            if (value === 'Beginner') {
+                beginnerDiv.classList.remove('hidden');
+                intAdvDiv.classList.add('hidden');
+            } else if (value === 'Intermediate' || value === 'Advanced') {
+                beginnerDiv.classList.add('hidden');
+                intAdvDiv.classList.remove('hidden');
+            }
+        });
+    });
+
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
