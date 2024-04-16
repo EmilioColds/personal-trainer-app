@@ -3,25 +3,26 @@ const sequelize = require('../config/connection');
 
 
 
-class Beginner extends Model {}
+class intAdvObj extends Model {}
 
-Beginner.init({
+intAdvObj.init({
     id:{
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
     },
-    objective:{
+    Objective:{
         type: DataTypes.STRING,
         allowNull: false,
     },
+
 
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'beginnerObj',
+    modelName: 'intAdvObj',
 });
 
-module.exports = Beginner;
+module.exports = intAdvObj;
