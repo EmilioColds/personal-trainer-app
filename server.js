@@ -1,12 +1,15 @@
 const express = require('express');
 const session = require('express-session');
+
 const exphbs = require('express-handlebars');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const { sequelize } = require('./config/connection'); // Import Sequelize connection. Checar que esto matchee
 const router = require('./index.js'); // Import main router
 
+
 const app = express();
 const PORT = 3003;
+
 
 // Configure Handlebars as the view engine
 app.engine('handlebars', exphbs());
@@ -34,3 +37,4 @@ sequelize.sync()
     .catch((error) => {
         console.error('Database connection error:', error);
     });
+
