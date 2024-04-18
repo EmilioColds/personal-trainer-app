@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-const User = require('../models/User'); // Import User model from Sequelize. Hay que checar que esto mat
+const User = require('../../models/user'); // Import User model from Sequelize. Hay que checar que esto mat
 
 
 // POST //signup - Handle user signup
@@ -11,7 +11,7 @@ router.post('/signup', async (req, res) => {
 
     try {
         // Check if the user already exists
-        const existingUser = await User.findOne({ where: { user } });
+        const existingUser = await User.findOne({ where: { username } });
         if (existingUser) {
             return res.status(400).send('user already exists');
         }
@@ -31,11 +31,11 @@ router.post('/signup', async (req, res) => {
 ////log in
 
 router.post('/login', async (req, res) => {
-    const { user, password } = req.body;
+    const { username, password } = req.body;
 
     try {
         // Find the user by user in the database
-        const user = await User.findOne({ where: { user } });
+        const user = await User.findOne({ where: { username } });
 
         // If user not found or password doesn't match, return error
         if (!user || !(await bcrypt.compare(password, user.password))) {
@@ -44,7 +44,7 @@ router.post('/login', async (req, res) => {
 
         // Authentication successful, set session and redirect
         req.session.userId = user.id; // Store user ID in session 
-        res.redirect('/routi    ne'); // Redirect to routine page upon successful login
+        res.redirect('/routine'); // Redirect to routine page upon successful login
     } catch (error) {
         console.error('Login error:', error);
         res.status(500).send('Internal server error');

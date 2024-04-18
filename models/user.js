@@ -1,3 +1,4 @@
+
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
@@ -25,7 +26,7 @@ User.init(
         isEmail: true,
       },
     },
-    generalData_id:{
+     Data_id:{
       type: DataTypes.INTEGER,
       references:{
         model: 'generalData',
@@ -68,7 +69,7 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'User',
+    modelName: 'user',
   }
 );
 
