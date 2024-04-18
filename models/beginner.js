@@ -16,12 +16,12 @@ Beginner.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-    routineId: { // Foreign key referencing Routine model
+    routineId: { 
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'routine', // Reference the Routine model
-          key: 'id', // Reference the primary key of Routine
+          model: 'routine', 
+          key: 'id', 
         },
     },
 

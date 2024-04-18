@@ -3,9 +3,9 @@ const sequelize = require('../config/connection');
 
 
 
-class intAdvObj extends Model {}
+class IntAdvObj extends Model {}
 
-intAdvObj.init({
+IntAdvObj.init({
     id:{
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -16,12 +16,12 @@ intAdvObj.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-    routineId: { // Foreign key referencing Routine model
+    routineId: { 
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'routine', // Reference the Routine model
-          key: 'id', // Reference the primary key of Routine
+          model: 'routine', 
+          key: 'id', 
         },
       },
 
@@ -32,4 +32,4 @@ intAdvObj.init({
     modelName: 'intAdvObj',
 });
 
-module.exports = intAdvObj;
+module.exports = IntAdvObj;

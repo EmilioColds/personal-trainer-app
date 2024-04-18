@@ -1,16 +1,16 @@
-const User = require('./user');
-const GeneralData = require('./GeneralData')
-const Records = require('./Records')
-const Routine = require('./Routine')
-const level = require('./Level')
+const User = require('./User');
+const GeneralData = require('./GeneralData');
+const Records = require('./Records');
+const Routine = require('./Routine');
+const level = require('./Level');
 const Beginner = require('./beginner');
-const intAdvObj = require('./adv-int');
+const IntAdvObj = require('./adv-int');
 
 
 // objetivo principientes = beginnerObj
 // inermedio/avancado = intAdvObj
 
-Routine.hasMany(level, { // Change to hasMany for many levels per routine
+Routine.hasMany(level, { 
     foreignKey: 'user_id',
     onDelete: 'CASCADE',
   });
@@ -42,23 +42,14 @@ Routine.hasMany(level, { // Change to hasMany for many levels per routine
     foreignKey: 'user_id',
   });
   
-  // Beginner and intAdvObj are separate models (assuming)
+ 
   Beginner.belongsTo(Routine, {
-    foreignKey: 'user_id', // Removed through: level
+    foreignKey: 'user_id', 
   });
   
- intAdvObj.belongsTo(Routine, { 
-    foreignKey: 'user_id', // Removed through: level
+ IntAdvObj.belongsTo(Routine, { 
+    foreignKey: 'user_id', 
   });
   
-  module.exports = {
-    User,
-    GeneralData,
-    Records,
-    Routine,
-    level,
-    Beginner,
-    intAdvObj, 
-  };
+  module.exports = { User, GeneralData, Records, Routine,level, Beginner, IntAdvObj};
 
-module.exports = {User, GeneralData, Records, Routine, level, Beginner, intAdvObj};
