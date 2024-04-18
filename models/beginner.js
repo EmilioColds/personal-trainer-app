@@ -24,12 +24,17 @@ Beginner.init({
           key: 'id', 
         },
     },
-
+},
+{
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'beginnerObj',
-});
+
+}
+    
+
+);
 
 module.exports = Beginner;

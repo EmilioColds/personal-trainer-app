@@ -14,17 +14,17 @@ const PORT = 3003;
 
 
 //session checar que coincida
-const sess = {
+const sessions = {
     secret: process.env.SESSION_SECRET || 'Super secret',
     cookie: { maxAge: 15 * 60 * 1000 }, //Session will expire after 15 minutes
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     store: new SequelizeStore({
         db: sequelize,
     }),
 };
 
-app.use(session(sess));
+app.use(session(sessions));
 // Configure Handlebars as the view engine
 app.engine('handlebars', exphbs({defaultLayout:"main"}));
 app.set('view engine', 'handlebars');

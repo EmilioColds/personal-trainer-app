@@ -1,20 +1,17 @@
-const User = require('./User');
-const GeneralData = require('./GeneralData');
+const sequelize = require('sequelize');
+const User = require('./user');
+const GeneralData = require('./Data');
 const Records = require('./Records');
 const Routine = require('./Routine');
-const level = require('./Level');
+const Level = require('./Level');
 const Beginner = require('./beginner');
 const IntAdvObj = require('./adv-int');
 
-
-// objetivo principientes = beginnerObj
-// inermedio/avancado = intAdvObj
-
-Routine.hasMany(level, { 
+Routine.hasMany(Level, { 
     foreignKey: 'user_id',
     onDelete: 'CASCADE',
   });
-  level.belongsTo(Routine, {
+  Level.belongsTo(Routine, {
     foreignKey: 'user_id',
   });
   
@@ -51,5 +48,5 @@ Routine.hasMany(level, {
     foreignKey: 'user_id', 
   });
   
-  module.exports = { User, GeneralData, Records, Routine,level, Beginner, IntAdvObj};
+  module.exports = {sequelize, User, GeneralData, Records, Routine, Level, Beginner, IntAdvObj};
 

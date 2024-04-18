@@ -24,12 +24,15 @@ IntAdvObj.init({
           key: 'id', 
         },
       },
+    },
+    {
+      sequelize,
+      timestamps: false,
+      freezeTableName: true,
+      underscored: true,
+      modelName: 'intAdvObj',
+    }
 
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'intAdvObj',
-});
+);
 
 module.exports = IntAdvObj;

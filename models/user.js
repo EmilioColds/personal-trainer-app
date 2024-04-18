@@ -26,7 +26,7 @@ User.init(
         isEmail: true,
       },
     },
-    generalData_id:{
+     Data_id:{
       type: DataTypes.INTEGER,
       references:{
         model: 'generalData',
