@@ -1,10 +1,8 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
-const trainingRoutes = require('./trainningroutes');
+const trainingRoutes = require('./trainingRoutes');
+
 router.use('/users', userRoutes);
-
-
- // Import correct module
-router.use("/training", trainingRoutes); // Use correct module for training routes
+router.use("/training", trainingRoutes);
 
 module.exports = router;
