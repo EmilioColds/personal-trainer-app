@@ -22,7 +22,7 @@ GeneralData.init(
         allowNull: false,
     },
     hight: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.FLOAT,
         allowNull: false,
     },
     gender:{

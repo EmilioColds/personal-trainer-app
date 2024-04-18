@@ -10,56 +10,55 @@ const intAdvObj = require('./adv-int');
 // objetivo principientes = beginnerObj
 // inermedio/avancado = intAdvObj
 
-intAdvObj.belongsTo(Routine,{
-    through: {
-        model: level,
-        unique: false
-      },
-      // Define an alias for when data is retrieved
-      as: 'intAdvObj'
-});
-
-Beginner.belongsTo(Routine,{
-    through: {
-        model: level,
-        unique: false
-      },
-      // Define an alias for when data is retrieved
-      as: 'beginnerObj'
-});
-
-
-Routine.hasOne(level,{
-   foreignKey:'user_id',
-    onDelete: 'CASCADE',
-});
-level.belongsTo(Routine,{
-    foreignKey:'user_id',
-});
-
-User.hasOne(Routine,{
-    foreignKey:'user_id',
-    onDelete: 'CASCADE',
-});
-Routine.belongsTo(User,{
-    foreignKey:'user_id',
-});
-User.hasMany(Records,{
-    foreignKey:'user_id',
-    onDelete:'CASCADE',
-});
-Records.belongsTo(User,{
-    foreignKey:'user_id'
-
-});
-User.hasOne(GeneralData,{
+Routine.hasMany(level, { // Change to hasMany for many levels per routine
     foreignKey: 'user_id',
     onDelete: 'CASCADE',
-});
-
-GeneralData.belongsTo( User,{
-    foreignKey: 'user_id'
-});
-
+  });
+  level.belongsTo(Routine, {
+    foreignKey: 'user_id',
+  });
+  
+  User.hasOne(Routine, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
+  });
+  Routine.belongsTo(User, {
+    foreignKey: 'user_id',
+  });
+  User.hasMany(Records, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
+  });
+  Records.belongsTo(User, {
+    foreignKey: 'user_id',
+  });
+  
+  User.hasOne(GeneralData, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
+  });
+  
+  GeneralData.belongsTo(User, {
+    foreignKey: 'user_id',
+  });
+  
+  // Beginner and intAdvObj are separate models (assuming)
+  Beginner.belongsTo(Routine, {
+    foreignKey: 'user_id', // Removed through: level
+  });
+  
+ intAdvObj.belongsTo(Routine, { 
+    foreignKey: 'user_id', // Removed through: level
+  });
+  
+  module.exports = {
+    User,
+    GeneralData,
+    Records,
+    Routine,
+    level,
+    Beginner,
+    intAdvObj, 
+  };
 
 module.exports = {User, GeneralData, Records, Routine, level, Beginner, intAdvObj};

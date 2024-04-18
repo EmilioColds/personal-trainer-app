@@ -12,7 +12,7 @@ level.init({
         primaryKey: true,
         autoIncrement: true,
     },
-    biginner_objective:{
+    beginner_objective:{
         type: DataTypes.STRING,
         allowNull: false,
         reference:{
