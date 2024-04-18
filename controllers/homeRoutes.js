@@ -2,8 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 // Import other routers
-const logURouter = require('./logURouter'); // Import router (for login)
-const signURouter = require('./signU'); // Import signup router
+
 
 // Homepage route
 router.get('/', (req, res) => {
@@ -25,10 +24,5 @@ router.get('/questionnaire', (req, res) => {
     res.render('questionnaire', { views: 'questionnaire' });
 });
 
-//  router for login functionality
-router.use('/logU', logURouter);
 
-// router for signup functionality
-router.use('/signup', signURouter);
-
-module.exports = index;
+module.exports = router;

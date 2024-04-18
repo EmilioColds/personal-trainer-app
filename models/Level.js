@@ -3,16 +3,16 @@ const sequelize = require('../config/connection');
 const { keyBy } = require('lodash');
 
 
-class level extends Model {}
+class Level extends Model {}
 
-level.init({
+Level.init({
     id:{
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
     },
-    biginner_objective:{
+    beginner_objective:{
         type: DataTypes.STRING,
         allowNull: false,
         reference:{
@@ -31,12 +31,16 @@ level.init({
         },
  },
 
-
+},
+{
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'level',
-});
 
-module.exports = level;
+}
+
+);
+
+module.exports = Level;
