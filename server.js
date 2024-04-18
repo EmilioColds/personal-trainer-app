@@ -5,7 +5,7 @@ const path=require("path");
 const exphbs = require('express-handlebars').engine;
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const { sequelize } = require('./config/connection'); // Import Sequelize connection. Checar que esto matchee
-const router = require('./index.js'); // Import main router
+const router = require('./controllers/index.js'); // Import main router
 
 
 const app = express();

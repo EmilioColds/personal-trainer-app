@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-const User = require('../models/User'); // Import User model from Sequelize. Hay que checar que esto mat
+const User = require('../../models/user'); // Import User model from Sequelize. Hay que checar que esto mat
 
 
 // POST //signup - Handle user signup
