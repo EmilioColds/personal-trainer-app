@@ -27,4 +27,4 @@ THEN I can answer the questionnaire again
 ```
 ## Link to app and repo
 Repo link: https://github.com/EmilioColds/personal-trainer-app
-Web page link:
+Web page link: https://personaltra-8cb0e60e1bb0.herokuapp.com
