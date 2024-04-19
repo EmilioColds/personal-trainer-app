@@ -12,7 +12,7 @@ Routine.init({
         autoIncrement: true,
       },
       routine:{
-        type: DataTypes.TEXT,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       user_id:{
@@ -22,12 +22,17 @@ Routine.init({
             key: 'id',
         },
     },
-sequelize,
-timestamps: false,
-freezeTableName: true,
-underscored: true,
-modelName: 'routine',
 
-});
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'routine',
+
+  }
+
+);
 
 module.exports = Routine;

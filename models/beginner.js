@@ -16,12 +16,25 @@ Beginner.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-
+    routineId: { 
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'routine', 
+          key: 'id', 
+        },
+    },
+},
+{
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'beginnerObj',
-});
+
+}
+    
+
+);
 
 module.exports = Beginner;
