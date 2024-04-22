@@ -4,13 +4,13 @@ const path=require("path");
 
 const exphbs = require('express-handlebars').engine;
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const { sequelize } = require('./config/connection'); // Import Sequelize connection. Checar que esto matchee
+const  sequelize = require('./config/connection'); // Import Sequelize connection. Checar que esto matchee
 const apiRoutes = require('./controllers/api');
 const homeRoutes = require('./controllers/homeRoutes');
 
 
 const app = express();
-const PORT = 3003;
+const PORT = 4004;
 
 
 //session checar que coincida

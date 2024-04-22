@@ -2,10 +2,25 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const User = require('../../models/user'); // Import User model from Sequelize. Hay que checar que esto mat
-
-
+const  GeneralData  = require('../../models/GeneralData');
+const Routine = require('../../models/Routine');
+const Beginner = require('../../models/beginner');
+const  IntAdvObj = require ('../../models/IntAdvObj');
+const Level = require('../../models/Level');
+const Records = require('../../models/Records');
 // POST //signup - Handle user signup
 //are we going to use email tho?
+router.get("/users", async (req, res) => {
+  try {
+    const [beginner] = await Beginner.findAll();
+    res.json(beginner);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+
+
 router.post('/signup', async (req, res) => {
     const { username, password } = req.body;
 

@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 
 class GeneralData extends Model {}
-
+console.log('hola')
 GeneralData.init(
    {
    id:{
@@ -21,7 +21,7 @@ GeneralData.init(
       allowNull: false,
       },
    hight: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.INTEGER,
       allowNull: false,
        },
    gender:{
@@ -70,7 +70,7 @@ GeneralData.init(
 },
 {
    sequelize, 
-   modelName: 'generalData',// Pass the imported instance
+   modelName: 'generaldata',// Pass the imported instance
    timestamps: false,
    freezeTableName: true,
    underscored: true,
