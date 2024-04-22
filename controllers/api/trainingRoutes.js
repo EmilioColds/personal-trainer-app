@@ -22,7 +22,7 @@ async function generateTrainingSchedule(userInput) {
         throw error;
     }
 }
-router.get('/generate_schedule', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const userInput = req.query; // this has to match db/useri
         // Calling function
