@@ -13,6 +13,7 @@ User.init(
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
+
     },
     username: {
       type: DataTypes.STRING,
@@ -26,10 +27,17 @@ User.init(
         isEmail: true,
       },
     },
-     Data_id:{
+     generalData_id:{
       type: DataTypes.INTEGER,
       references:{
-        model: 'generalData',
+        model: 'generaldata',
+        key: 'id',
+      },
+    },
+    routine_id:{
+      type: DataTypes.INTEGER,
+      references:{
+        model: 'routine',
         key: 'id',
       },
     },

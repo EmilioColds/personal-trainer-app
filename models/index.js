@@ -1,11 +1,11 @@
 const sequelize = require('sequelize');
 const User = require('./user');
-const GeneralData = require('./Data');
+const GeneralData = require('./GeneralData');
 const Records = require('./Records');
 const Routine = require('./Routine');
 const Level = require('./Level');
 const Beginner = require('./beginner');
-const IntAdvObj = require('./adv-int');
+const IntAdvObj = require('./IntAdvObj');
 
 Routine.hasMany(Level, { 
     foreignKey: 'user_id',
@@ -17,14 +17,13 @@ Routine.hasMany(Level, {
   
   User.hasOne(Routine, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE',
+    
   });
   Routine.belongsTo(User, {
     foreignKey: 'user_id',
   });
   User.hasMany(Records, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE',
   });
   Records.belongsTo(User, {
     foreignKey: 'user_id',
@@ -32,7 +31,6 @@ Routine.hasMany(Level, {
   
   User.hasOne(GeneralData, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE',
   });
   
   GeneralData.belongsTo(User, {

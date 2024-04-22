@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const { User } = require('./user');
 
 
 
@@ -31,9 +32,8 @@ Records.init(
                 model: 'user',
                 key: 'id',
             },
-        },
-        
-    },
+            },
+          },
     {
         sequelize,
         timestamps: false,
