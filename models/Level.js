@@ -12,17 +12,16 @@ Level.init({
         primaryKey: true,
         autoIncrement: true,
     },
-    beginnerObj:{
+    beginner_objective:{
         type: DataTypes.STRING,
         allowNull: false,
         reference:{
-            model: 'beginnerObj',
+            model: 'beginner',
             key: 'id',
             allowNull : true,
-        },
-        defaultValue: 'user@example.com',
+        }
     },
-    intAdvObj:{
+    adv_int_objective:{
         type: DataTypes.STRING,
         allowNull: false,
         reference:{
@@ -30,7 +29,6 @@ Level.init({
             key: 'id',
             allowNull : true,
         },
-        defaultValue: 'user@example.com',
  },
 
 },
